@@ -1,0 +1,69 @@
+**********EJERCICIO1*********** 
+SELECT f.film_id, f.title
+FROM film f
+
+**********EJERCICIO2*********** 
+SELECT *
+FROM film f LIMIT 5
+
+**********EJERCICIO3*********** 
+SELECT *
+FROM film f
+WHERE f.film_id<4;
+
+**********EJERCICIO4***********
+
+ SELECT *
+FROM actor ac
+WHERE ac.first_name IN ('Angela', 'Angelica', 'Audrey');
+
+
+**********EJERCICIO5***********
+
+SELECT *
+FROM actor ac
+WHERE ac.first_name IN ('Julia');
+
+**********EJERCICIO6***********
+SELECT *
+FROM customer c
+WHERE c.first_name='Jamie Rice'
+
+**********EJERCICIO7***********
+SELECT *
+FROM customer c
+WHERE c.first_name='Jamie Rice'
+**********EJERCICIO8***********
+SELECT p.amount, p.payment_date 
+FROM payment p 
+WHERE p.amount<1
+**********EJERCICIO9***********
+SELECT r.customer_id
+FROM rental r
+ORDER BY return_date DESC LIMIT 3;
+
+**********EJERCICIO10***********
+SELECT COUNT(*), f.rating
+FROM film f
+WHERE f.rating IN ('NC-17','PG','PG-13')
+GROUP BY f.rating
+
+**********EJERCICIO11***********
+SELECT  COUNT(ac.actor_id) as cantidad ,ac.film_id
+FROM film_actor ac
+GROUP BY ac.film_id
+ORDER BY cantidad DESC LIMIT 10;
+**********EJERCICIO12***********
+SELECT COUNT(actor_id) as cantidad_actor, ac.film_id
+FROM film_actor ac
+GROUP BY ac.film_id 
+ORDER BY cantidad_actor DESC
+
+**********EJERCICIO14***********
+SELECT ROUND((f.rental_rate),2),
+FROM film f
+
+**********EJERCICIO15***********
+SELECT ac.first_name   
+FROM actor ac
+ORDER BY LENGTH(ac.first_name) DESC LIMIT 1
